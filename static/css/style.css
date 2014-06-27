@@ -21,6 +21,27 @@ div.melon-summary {
     padding-bottom: 20px;
 }
 
+div#blackout-screen {
+    background-color: rgba(64, 64, 64, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+div#promotion {
+  width: 600px;
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  margin-left: -300px;
+}
+
+div#blackout-screen h1 {
+  color: red;
+}
+
 li.warning {
     color: red;
 }
