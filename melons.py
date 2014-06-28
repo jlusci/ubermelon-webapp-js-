@@ -72,5 +72,9 @@ def checkout():
     flash("Sorry! Checkout will be implemented in a future version of ubermelon.")
     return redirect("/melons")
 
+@app.route("/cart_items")
+def show_cart_items():
+    return render_template("_cart_items.html")
+
 if __name__ == "__main__":
     app.run(debug=True)

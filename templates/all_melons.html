@@ -15,8 +15,14 @@
     {% endfor %}
 </div>
 
-<script type="text/javascript">
-</script>
+<div id="cart">
+    <div id="cart-target">
+        <a href="" id="cart-close">Close</a>
+        <div id="cart-contents">
+        </div>
+    </div>
+</div>
+
 <div id="blackout-screen">
     <div id="promotion" class= "jumbotron">
         <h1>Save on Watermelons! All watermelons 50% off! SUPER!</h1>
@@ -31,6 +37,44 @@ function hideBlackoutScreen(){
     h1.hide();
     return false
 }
+
+function showCartSummary(){
+    var cart = $("div#cart")  
+    cart.show();
+    getCartContents();
+    console.log("******************");
+    return false
+
+}
+function injectCartContents(data){
+    var cart = $("div#cart-contents");
+    cart.html(data);
+    console.log("monkey");
+    console.log(data);
+}
+
+function hideCartSummary(){
+    var cart = $("div#cart");
+    cart.hide();
+    return false
+}
+
+function getCartContents(){
+    $.get("/cart_items",injectCartContents);
+}
+
+function main(){
+    var link = $("a#close-promotion");
+    link.click(hideBlackoutScreen)
+
+    var link = $("a#cart_nav");
+    link.mouseover(showCartSummary);
+
+    var cartClose = $("a#cart-close")
+    cartClose.click(hideCartSummary)
+}
+
+$(main);
 
 </script>
 

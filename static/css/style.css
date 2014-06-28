@@ -42,6 +42,19 @@ div#blackout-screen h1 {
   color: red;
 }
 
+div#cart {
+  width: 200px;
+  border-width: 1px; 
+  border-color: #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50px;
+  right: 75px;
+  background-color: #f3f3f3;
+  display: none;
+}
+
 li.warning {
     color: red;
 }
