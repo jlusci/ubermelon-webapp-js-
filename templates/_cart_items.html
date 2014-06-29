@@ -1,1 +1,7 @@
-<div>Super Melon</div>
+<div>
+	<h4>My cart summary:</h4>
+{% for melon_type in cart_dict %}
+	<p>{{melon_type}} : {{cart_dict[melon_type]}}</p>
+{% endfor %}
+
+</div>

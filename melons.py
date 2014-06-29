@@ -74,7 +74,14 @@ def checkout():
 
 @app.route("/cart_items")
 def show_cart_items():
-    return render_template("_cart_items.html")
+    melons = session.get('cart')
+    cart_dict = {}
+    for melon_id in melons:
+        melon = model.get_melon_by_id(int(melon_id))
+        melon_type = melon.common_name
+        cart_dict[melon_type] = melons.get(melon_id)
+    # print cart_dict
+    return render_template("_cart_items.html", cart_dict = cart_dict)
 
 if __name__ == "__main__":
     app.run(debug=True)
